@@ -2,27 +2,136 @@
 <html lang="zh-CN">
 
 <head>
-    <meta charset="UTF-8">
-    <title>青中名人堂</title>
+  <meta charset="UTF-8">
+  <title>青中名人堂</title>
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/5.2.0/js/bootstrap.min.js"></script>
 </head>
 
-<!---然然你带我走吧然然-->
-
 <body>
-    <div>
-        <font size="5"><b>青中名人堂</b>：首期节目已发布！</font>
-        <br><b>=======================</b>
-        <br>
-        <br><font color="red" size="5">#1</font> <br><b>12/31 第二次校长专访</b>
-        <br>在线观看：
-                <br>
-                <video width="960" height="540" controls>
-                    <source src="http://124.222.131.183/qzmrt_1.mp4"  type="video/mp4">
-                  </video>
-        <br>
-        <br><b>=======================</b>
-        <font size="4" color="red"><br>请认准我们的唯一域名：<i><b>qzmrt.me</b></i></font>
-        <font size="4" color="red"><br>或这个跳转域名：<i><b>青浦高级中学.退学.com</b></i></font>
-        <br><img src="https://s4.ax1x.com/2021/12/22/T1751f.gif" alt="大佐の认可" />
+
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">关于</h4>
+            <p class="text-muted">
+              这里记录了青中的许多知名人物（确信）的生活，并会时不时分享一些相关内容、拍摄的采访等节目。<br /><br />
+              请注意：青中名人堂是一个虚构的组织，且与现实中的任何人物、地点均无关。如有雷同，纯属巧合。所有的视频与图片版权均归青中名人堂所有，谢绝一切形式的转载。内容仅供娱乐，请勿当真。
+            </p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">链接</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://github.com/qzmrt/qzmrt-web" class="text-white">Github repo</a></li>
+              <li><a href="mailto:ltfjx2333@gmail.com" class="text-white">Email me</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+      <div class="container">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <strong>青中名人堂 - qzmrt.me</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+          aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="fw-light">青中名人堂</h1>
+          <p class="lead text-muted">首期节目已发布</p>
+          <p>
+            <a href="#contents" class="btn btn-primary my-2">观看我们的节目</a>
+            <a href="https://github.com/qzmrt/qzmrt-web" class="btn btn-secondary my-2" data-bs-toggle="collapse"
+              data-bs-target="#navbarHeader" onclick="
+              document.getElementById('siteby').innerHTML = document.getElementById('siteby').innerHTML.replace(':P',':D')
+              ">关于我们</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="contents">
+
+          <!-- card 开始 -->
+          <div class="col" id="card1">
+            <div class="card shadow-sm">
+              <img src="https://175.178.161.73/potato-resources/other_projects/qzmrt/qzmrt_1.jpg" />
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" />
+              </svg>
+
+              <div class="card-body">
+                <p class="card-text">
+                  <b>第二次校长专访</b><br />青中名人堂的首期节目。在这期节目中，我们向校长们询问了一些大家都关心（迫真）的问题。
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button onclick="
+                    document.location.href='#player';
+                    document.getElementById('vidsource').src=
+                    'https:\/\/175.178.161.73/potato-resources/other_projects/qzmrt/qzmrt_1.mp4';
+                    document.getElementById('video').load();
+                    document.getElementById('player').innerHTML = document.getElementById('player').innerHTML.replace(' - 在上方选择一个视频来播放','')
+                    " type="button" class="btn btn-sm btn-outline-secondary">观看</button>
+                  </div>
+                  <small class="text-muted">3 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card 结束 -->
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <!-- 播放器 -->
+      <div class="row p-4 text-center">
+        <p class="fw-light h1" id="player">放映室 - 在上方选择一个视频来播放</p>
+      </div>
+      <div class="row px-4 pb-4">
+        <video id="video" class="ml-auto mr-auto" width="80%" controls>
+          <source id="vidsource" type="video/mp4">
+          你的浏览器不支持HTML5 video，请更换浏览器。
+        </video>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer class="text-muted py-5 bg-light">
+    <div class="container">
+      <p class="float-end mb-1">
+        <a href="#">回到顶部</a>
+      </p>
+      <p class="mb-1">青中名人堂 &copy; 2022 </p>
+      <p class="mb-1" id="siteby">Site By <a href="https://akyuu.cn/">RLt</a> :P</p>
+    </div>
+  </footer>
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
